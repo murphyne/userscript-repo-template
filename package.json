@@ -12,5 +12,13 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "homepage": "https://github.com/murphyne/userscript-repo-template#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/murphyne/userscript-repo-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/murphyne/userscript-repo-template/issues"
   }
 }

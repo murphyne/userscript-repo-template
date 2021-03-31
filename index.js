@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name         New Userscript
-// @version      0.1
-// @description  try to take over the world!
-// @author       You
-// @namespace    http://tampermonkey.net/
+// @name         userscript-repo-template
+// @version      0.0.0
+// @description  Repository template for userscript development.
+// @author       murphyne
+// @namespace    https://github.com/murphyne
 // @match        http://*/*
 // @grant        none
 // ==/UserScript==

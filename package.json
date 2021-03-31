@@ -1,9 +1,9 @@
 {
-  "name": "root",
-  "version": "1.0.0",
-  "description": "",
+  "name": "userscript-repo-template",
+  "version": "0.0.0",
+  "description": "Repository template for userscript development.",
   "license": "ISC",
-  "author": "",
+  "author": "murphyne",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

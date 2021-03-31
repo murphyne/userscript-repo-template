@@ -5,6 +5,11 @@
   "license": "ISC",
   "author": "murphyne",
   "main": "index.js",
+  "keywords": [
+    "userscript",
+    "greasemonkey",
+    "tampermonkey"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   }

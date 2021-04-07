@@ -10,6 +10,9 @@
     "greasemonkey",
     "tampermonkey"
   ],
+  "devDependencies": {
+    "rollup": "^2.44.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

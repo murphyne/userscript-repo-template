@@ -2,7 +2,7 @@
   "name": "userscript-repo-template",
   "version": "0.0.0",
   "description": "Repository template for userscript development.",
-  "license": "ISC",
+  "license": "MIT",
   "author": "murphyne",
   "main": "index.js",
   "keywords": [

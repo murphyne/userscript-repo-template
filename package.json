@@ -4,7 +4,7 @@
   "description": "Repository template for userscript development.",
   "license": "MIT",
   "author": "murphyne",
-  "main": "script.user.js",
+  "browser": "script.user.js",
   "keywords": [
     "userscript",
     "greasemonkey",

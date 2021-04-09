@@ -11,6 +11,7 @@
     "tampermonkey"
   ],
   "devDependencies": {
+    "mocha": "^8.3.2",
     "rollup": "^2.44.0"
   },
   "scripts": {

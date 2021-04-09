@@ -4,6 +4,7 @@
   "description": "Repository template for userscript development.",
   "license": "MIT",
   "author": "murphyne",
+  "type": "module",
   "browser": "script.user.js",
   "keywords": [
     "userscript",
@@ -17,7 +18,7 @@
   },
   "scripts": {
     "build": "rollup script.user.js -d dist",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "homepage": "https://github.com/murphyne/userscript-repo-template#readme",
   "repository": {

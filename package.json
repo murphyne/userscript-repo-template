@@ -5,7 +5,7 @@
   "license": "MIT",
   "author": "murphyne",
   "type": "module",
-  "browser": "src/script.user.js",
+  "browser": "src/main.js",
   "keywords": [
     "userscript",
     "greasemonkey",

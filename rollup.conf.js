@@ -12,7 +12,7 @@ let bannerText = `
 `;
 
 export default {
-  input: 'script.user.js',
+  input: 'src/script.user.js',
   output: {
     file: 'dist/script.user.js',
     format: 'esm',

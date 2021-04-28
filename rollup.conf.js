@@ -1,3 +1,5 @@
+import virtual from '@rollup/plugin-virtual';
+
 let bannerText = `
 // ==UserScript==
 // @name         userscript-repo-template
@@ -11,11 +13,23 @@ let bannerText = `
 // ==/UserScript==
 `;
 
-export default {
-  input: 'src/main.js',
-  output: {
-    file: 'dist/script.user.js',
-    format: 'esm',
-    banner: bannerText.trimStart(),
+export default [
+  {
+    input: 'src/main.js',
+    output: {
+      file: 'dist/script.user.js',
+      format: 'esm',
+      banner: bannerText.trimStart(),
+    },
   },
-};
+  {
+    input: 'entry',
+    plugins: [
+      virtual({ entry: '' }),
+    ],
+    output: {
+      file: 'dist/script.meta.js',
+      banner: bannerText.trim(),
+    },
+  },
+];

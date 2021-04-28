@@ -9,6 +9,8 @@ let bannerText = `
 // @author       murphyne
 // @namespace    https://github.com/murphyne
 // @match        http://*/*
+// @updateUrl    https://github.com/murphyne/userscript-repo-template/releases/latest/download/script.meta.js
+// @downloadUrl  https://github.com/murphyne/userscript-repo-template/releases/latest/download/script.user.js
 // @grant        none
 // ==/UserScript==
 `;

@@ -12,6 +12,7 @@
     "tampermonkey"
   ],
   "devDependencies": {
+    "@rollup/plugin-virtual": "^2.0.3",
     "chai": "^4.3.4",
     "mocha": "^8.3.2",
     "rollup": "^2.44.0"

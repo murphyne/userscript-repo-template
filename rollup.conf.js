@@ -1,9 +1,10 @@
 import virtual from '@rollup/plugin-virtual';
+import pkg from './package.json';
 
 let bannerText = `
 // ==UserScript==
 // @name         userscript-repo-template
-// @version      0.0.0
+// @version      ${pkg.version}
 // @description  Repository template for userscript development.
 // @license      MIT
 // @author       murphyne

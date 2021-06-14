@@ -15,7 +15,7 @@
     "@rollup/plugin-virtual": "^2.0.3",
     "chai": "^4.3.4",
     "mocha": "^8.4.0",
-    "rollup": "^2.51.0"
+    "rollup": "^2.51.2"
   },
   "scripts": {
     "build": "rollup -c rollup.conf.js",

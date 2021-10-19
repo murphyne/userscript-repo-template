@@ -52,3 +52,17 @@ jobs:
         asset_path: dist/script.meta.js
         asset_name: script.meta.js
         asset_content_type: application/javascript
+
+    - name: Upload userscript to artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        path: dist/script.user.js
+        name: script.user.js
+        retention-days: 5
+
+    - name: Upload metadata to artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        path: dist/script.meta.js
+        name: script.meta.js
+        retention-days: 5

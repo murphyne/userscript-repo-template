@@ -54,14 +54,14 @@ jobs:
         asset_content_type: application/javascript
 
     - name: Upload userscript to artifacts
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         path: dist/script.user.js
         name: script.user.js
         retention-days: 5
 
     - name: Upload metadata to artifacts
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         path: dist/script.meta.js
         name: script.meta.js

@@ -1,5 +1,7 @@
 import virtual from '@rollup/plugin-virtual';
-import pkg from './package.json';
+import { readFileSync } from 'node:fs';
+
+const pkg = JSON.parse(readFileSync(new URL('./package.json', import.meta.url)));
 
 let bannerText = `
 // ==UserScript==

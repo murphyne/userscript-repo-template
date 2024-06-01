@@ -1,4 +1,4 @@
-import chai from 'chai';
+import * as chai from 'chai';
 
 describe('Test system', function () {
   it('assert.ok is working', function () {

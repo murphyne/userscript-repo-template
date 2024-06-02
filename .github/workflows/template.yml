@@ -17,3 +17,39 @@ jobs:
           echo "isTemplate=$isTemplate" >> $GITHUB_OUTPUT
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  job-materialize-template:
+    runs-on: ubuntu-latest
+
+    needs: job-check-template
+    if: ${{ needs.job-check-template.outputs.isTemplate != 'true' }}
+
+    steps:
+      - name: Fetch information
+        id: step-fetch-info
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const query = `query($owner:String!, $name:String!) {
+              repository(owner:$owner, name:$name) {
+                name
+                description
+                url
+                owner {
+                  login
+                  ... on User {
+                    url
+                  }
+                  ... on Organization {
+                    url
+                  }
+                }
+              }
+            }`;
+            const variables = {
+              owner: context.repo.owner,
+              name: context.repo.repo,
+            };
+            const result = await github.graphql(query, variables);
+            console.log(result);
+            return result;

@@ -24,6 +24,9 @@ jobs:
     needs: job-check-template
     if: ${{ needs.job-check-template.outputs.isTemplate != 'true' }}
 
+    permissions:
+      contents: write
+
     steps:
       - name: Fetch information
         id: step-fetch-info
@@ -110,3 +113,6 @@ jobs:
           rm LICENSE
 
           git diff --compact-summary
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5

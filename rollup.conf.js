@@ -5,11 +5,11 @@ const pkg = JSON.parse(readFileSync(new URL('./package.json', import.meta.url)))
 
 let bannerText = `
 // ==UserScript==
-// @name         userscript-repo-template
+// @name         ${pkg.name}
 // @version      ${pkg.version}
-// @description  Repository template for userscript development.
-// @license      MIT
-// @author       murphyne
+// @description  ${pkg.description}
+// @license      ${pkg.license}
+// @author       ${pkg.author}
 // @namespace    https://github.com/murphyne
 // @match        http://*/*
 // @updateUrl    https://github.com/murphyne/userscript-repo-template/releases/latest/download/script.meta.js

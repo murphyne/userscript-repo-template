@@ -1,0 +1,19 @@
+name: Template
+
+on: push
+
+jobs:
+  job-check-template:
+    runs-on: ubuntu-latest
+
+    outputs:
+      isTemplate: ${{ steps.step-check-template.outputs.isTemplate }}
+
+    steps:
+      - name: Check if template
+        id: step-check-template
+        run: |
+          isTemplate=$(gh repo view ${{ github.repository }} --json isTemplate --jq '.isTemplate')
+          echo "isTemplate=$isTemplate" >> $GITHUB_OUTPUT
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -53,3 +53,25 @@ jobs:
             const result = await github.graphql(query, variables);
             console.log(result);
             return result;
+
+      - name: Prepare variables
+        id: step-prepare-vars
+        env:
+          INFO: ${{ steps.step-fetch-info.outputs.result }}
+        run: |
+          FILTER=$(cat << EOF
+          {
+          name:        "\(.repository.name)",
+          description: "\(.repository.description // "")",
+          author:      "\(.repository.owner.login)",
+          namespace:   "\(.repository.owner.url)",
+          repoUrl:     "\(.repository.url)",
+          repoGit:     "\(.repository.url).git",
+          issuesUrl:   "\(.repository.url)/issues",
+          updateUrl:   "\(.repository.url)/releases/latest/download/script.meta.js",
+          downloadUrl: "\(.repository.url)/releases/latest/download/script.user.js",
+          } | to_entries | map("\(.key)=\(.value)") | .[]
+          EOF
+          )
+          echo "$INFO" | jq -c -r "$FILTER" >> $GITHUB_OUTPUT
+          cat $GITHUB_OUTPUT

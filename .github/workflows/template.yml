@@ -75,3 +75,30 @@ jobs:
           )
           echo "$INFO" | jq -c -r "$FILTER" >> $GITHUB_OUTPUT
           cat $GITHUB_OUTPUT
+
+      - name: Checkout the project
+        uses: actions/checkout@v4
+
+      - name: Apply variables
+        id: step-apply-vars
+        run: |
+          FILTER=$(cat << EOF
+          .
+          | .name           = "${{ steps.step-prepare-vars.outputs.name }}"
+          | .description    = "${{ steps.step-prepare-vars.outputs.description }}"
+          | .license        = ""
+          | .author         = "${{ steps.step-prepare-vars.outputs.author }}"
+          | .homepage       = "${{ steps.step-prepare-vars.outputs.repoUrl }}"
+          | .repository.url = "${{ steps.step-prepare-vars.outputs.repoGit }}"
+          | .bugs.url       = "${{ steps.step-prepare-vars.outputs.issuesUrl }}"
+          EOF
+          )
+          cat package.json | jq "$FILTER" > package.json.tmp && mv package.json.tmp package.json
+
+          cat rollup.conf.js \
+            | sed -r "s|(@namespace ?\s+)(\S+)$|\1${{ steps.step-prepare-vars.outputs.namespace }}|" \
+            | sed -r "s|(@updateUrl ?\s+)(\S+)$|\1${{ steps.step-prepare-vars.outputs.updateUrl }}|" \
+            | sed -r "s|(@downloadUrl\s+)(\S+)$|\1${{ steps.step-prepare-vars.outputs.downloadUrl }}|" \
+            > rollup.conf.js.tmp && mv rollup.conf.js.tmp rollup.conf.js
+
+          git diff --compact-summary

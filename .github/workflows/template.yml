@@ -102,3 +102,11 @@ jobs:
             > rollup.conf.js.tmp && mv rollup.conf.js.tmp rollup.conf.js
 
           git diff --compact-summary
+
+      - name: Delete extra files
+        run: |
+          rm .github/workflows/template.yml
+          rm .github/dependabot.yml
+          rm LICENSE
+
+          git diff --compact-summary

@@ -14,7 +14,7 @@
   "devDependencies": {
     "@rollup/plugin-virtual": "^3.0.2",
     "chai": "^5.2.0",
-    "mocha": "^11.1.0",
+    "mocha": "^11.5.0",
     "rollup": "^4.40.1"
   },
   "scripts": {

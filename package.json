@@ -13,7 +13,7 @@
   ],
   "devDependencies": {
     "@rollup/plugin-virtual": "^3.0.2",
-    "chai": "^6.0.1",
+    "chai": "^6.2.0",
     "mocha": "^11.7.3",
     "rollup": "^4.52.3"
   },

@@ -31,14 +31,14 @@ jobs:
         artifactContentType: application/javascript
 
     - name: Upload userscript to artifacts
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       with:
         path: dist/script.user.js
         name: script.user.js
         retention-days: 5
 
     - name: Upload metadata to artifacts
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       with:
         path: dist/script.meta.js
         name: script.meta.js

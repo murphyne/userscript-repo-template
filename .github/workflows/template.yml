@@ -80,7 +80,7 @@ jobs:
           cat $GITHUB_OUTPUT
 
       - name: Checkout the project
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Apply variables
         id: step-apply-vars

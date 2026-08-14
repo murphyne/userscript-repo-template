@@ -14,12 +14,11 @@
   "devDependencies": {
     "@rollup/plugin-virtual": "^3.0.2",
     "chai": "^6.2.2",
-    "mocha": "^11.7.6",
     "rollup": "^4.62.3"
   },
   "scripts": {
     "build": "rollup -c rollup.conf.js",
-    "test": "mocha"
+    "test": "node --test"
   },
   "homepage": "https://github.com/murphyne/userscript-repo-template#readme",
   "repository": {
